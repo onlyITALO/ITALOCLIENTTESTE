@@ -1,10 +1,10 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/onlyITALO/Library-ITALO/main/ITALO%20LIBRARY?token=GHSAT0AAAAAACNR62GPFNOPNP55SCY3MLLWZOTQGWQ'),true))()
 
 OrionLib:MakeNotification({
-Name = "ITALO CLIENT",Content = "DISCORD: https://discord.gg/wNSVgpazsE",Image = "rbxassetid://4483345998",Time = 10})
+Name = "ITALO CLIENT TESTE",Content = "DISCORD: https://discord.gg/wNSVgpazsE",Image = "rbxassetid://4483345998",Time = 10})
 
 OrionLib:MakeNotification({
-Name = "ITALO CLIENT",Content = "ITALO: Obrigado por usar nosso script :)",Image = "rbxassetid://4483345998",Time = 10})
+Name = "ESSE SCRIPT ESTA EM DESENVOLVIMENTO",Content = "ITALO: Obrigado por usar nosso script :)",Image = "rbxassetid://4483345998",Time = 10})
 
 local Window = OrionLib:MakeWindow({Name = "ITALO CLIENT", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroEnabled = false})
 
