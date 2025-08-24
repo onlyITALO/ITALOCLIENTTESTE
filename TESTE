@@ -18,32 +18,32 @@ local Window = OrionLib:MakeWindow({
     IntroEnabled = false
 })
 
--- ℹ️ Aba INFO
+-- Aba INFO
 local InfoTab = Window:MakeTab({
-    Name = "ℹ️ Info",
+    Name = "Info",
     Icon = "rbxassetid://6031763426",
     PremiumOnly = false
 })
 
 InfoTab:AddParagraph("ITALO CLIENT", "Hub universal para Roblox com várias funções úteis.")
 InfoTab:AddButton({
-    Name = "📺 Canal no YouTube",
+    Name = "Canal no YouTube",
     Callback = function()
         setclipboard("https://youtube.com/@italoedits")
         OrionLib:MakeNotification({Name="Copiado", Content="Link do canal copiado!", Time=4})
     end
 })
 InfoTab:AddButton({
-    Name = "💬 Servidor Discord",
+    Name = "Servidor Discord",
     Callback = function()
         setclipboard("https://discord.com/invite/aeqYJdfWP6")
         OrionLib:MakeNotification({Name="Copiado", Content="Link do Discord copiado!", Time=4})
     end
 })
 
--- 🖥️ Aba TELA-ESTICADA
+-- Aba TELA-ESTICADA
 local ITALOTab = Window:MakeTab({
-    Name = "🖥️ Tela-Esticada",
+    Name = "Tela-Esticada",
     Icon = "rbxassetid://6031068426",
     PremiumOnly = false
 })
@@ -60,22 +60,22 @@ local function aplicarResolucao(valor)
 end
 
 ITALOTab:AddButton({
-    Name = "🔧 Resolução Padrão",
+    Name = "Resolução Padrão",
     Callback = function()
         aplicarResolucao(1.0)
     end
 })
 
 local resolucoes = {
-    ["📏 Resolução 0.80"] = 0.80,
-    ["📏 Resolução 0.70"] = 0.70,
-    ["📏 Resolução 0.65"] = 0.65,
-    ["📏 Resolução 0.55"] = 0.55,
-    ["📏 Resolução 0.45"] = 0.45,
-    ["📏 Resolução 0.40"] = 0.40
+    ["Resolução 0.80"] = 0.80,
+    ["Resolução 0.70"] = 0.70,
+    ["Resolução 0.65"] = 0.65,
+    ["Resolução 0.55"] = 0.55,
+    ["Resolução 0.45"] = 0.45,
+    ["Resolução 0.40"] = 0.40
 }
 
-local ordem = {"📏 Resolução 0.80", "📏 Resolução 0.70", "📏 Resolução 0.65", "📏 Resolução 0.55", "📏 Resolução 0.45", "📏 Resolução 0.40"}
+local ordem = {"Resolução 0.80", "Resolução 0.70", "Resolução 0.65", "Resolução 0.55", "Resolução 0.45", "Resolução 0.40"}
 
 for _, nome in ipairs(ordem) do
     ITALOTab:AddButton({
@@ -86,16 +86,16 @@ for _, nome in ipairs(ordem) do
     })
 end
 
--- 🧠 Aba VISUAL
+-- Aba VISUAL
 local VisualTab = Window:MakeTab({
-    Name = "🧠 Visual",
+    Name = "Visual",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local espOn = false
 VisualTab:AddButton({
-    Name = "👁️ Alternar ESP (Jogadores)",
+    Name = "Alternar ESP (Jogadores)",
     Callback = function()
         espOn = not espOn
         local Players = game:GetService("Players")
@@ -130,26 +130,22 @@ VisualTab:AddButton({
     end
 })
 
-
 VisualTab:AddButton({
-    Name = "🔮 Ativar RTX Avançado",
+    Name = "Ativar RTX Avançado",
     Callback = function()
         loadstring(game:HttpGet('https://pastebin.com/raw/kH90gD5d'))()
     end
 })
 
-
-
-
--- ⚙️ Aba SISTEMA
+-- Aba SISTEMA
 local SystemTab = Window:MakeTab({
-    Name = "⚙️ Sistema",
+    Name = "Sistema",
     Icon = "rbxassetid://6034509993",
     PremiumOnly = false
 })
 
 SystemTab:AddButton({
-    Name = "🛡️ Ativar Anti-AFK",
+    Name = "Ativar Anti-AFK",
     Callback = function()
         local vu = game:GetService("VirtualUser")
         game:GetService("Players").LocalPlayer.Idled:Connect(function()
@@ -166,7 +162,7 @@ SystemTab:AddButton({
 })
 
 SystemTab:AddButton({
-    Name = "🌐 Server Hop (novo servidor)",
+    Name = "Server Hop (novo servidor)",
     Callback = function()
         local HttpService = game:GetService("HttpService")
         local TeleportService = game:GetService("TeleportService")
@@ -181,10 +177,23 @@ SystemTab:AddButton({
 })
 
 SystemTab:AddButton({
-    Name = "🔁 Reentrar no servidor",
+    Name = "Reentrar no servidor",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         local Players = game:GetService("Players")
         TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+    end
+})
+
+-- 🔹 Novo botão: Mover botão de pular
+SystemTab:AddButton({
+    Name = "Mover Botão de Pular",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/onlyITALO/JumpCustonHubonlyITALO/refs/heads/main/CustonHubJumponlyITALO')))()
+        OrionLib:MakeNotification({
+            Name = "HUD",
+            Content = "Sistema de mover botão do pulo carregado!",
+            Time = 4
+        })
     end
 })
